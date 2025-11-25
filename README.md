@@ -8,8 +8,7 @@ Features dynamic albums, lightbox viewing, and a cinematic landing page.
 ## ✅ Live Site
 
 🔗 **View the portfolio here:**  
-https://photography-portfolio-4zia-il7vx649b-allans-projects-34b5b3eb.vercel.app/
-
+https://photography-portfolio-4zia.vercel.app/
 ---
 
 ## 🖼️ Screenshots
@@ -24,7 +23,7 @@ https://photography-portfolio-4zia-il7vx649b-allans-projects-34b5b3eb.vercel.app
 
 ## 🚀 Tech Stack
 
-- Next.js 15 (App Router)
+- Next.js 15 
 - TypeScript
 - Tailwind CSS
 - Lightbox viewer
