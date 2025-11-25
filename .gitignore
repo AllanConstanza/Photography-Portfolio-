@@ -16,6 +16,7 @@
 # next.js
 /.next/
 /out/
+dist/
 
 # production
 /build
@@ -32,6 +33,11 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+env.local
+.env.development
+.env.production
+.env.test
+
 
 # vercel
 .vercel
@@ -39,3 +45,18 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# macOS system junk
+.DS_Store
+
+# vscode settings
+.vscode/
+
+# generated data
+src/data/albums.json
+
+# build scripts output
+public/photos-generated/
+
+# screenshots (optional)
+public/screenshots/
