@@ -1,103 +1,168 @@
+"use client";
+
+import { useEffect } from "react";
+import data from "@/data/albums.json";
 import Image from "next/image";
+import { useState } from "react";
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
 
-export default function Home() {
+
+// Fade-in animation component
+function FadeIn({ children, delay = 0 }: any) {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+    <div
+      style={{ animationDelay: `${delay}ms` }}
+      className="opacity-0 animate-fadeUp"
+    >
+      {children}
     </div>
   );
 }
+
+export default function HomePage() {
+  const photos: any[] = data.photos;
+
+  // Pick 4–6 featured photos (update with your favorites)
+  const featuredPhotos = [
+    photos[0],
+    photos[1],
+    photos[2],
+    photos[3],
+  ];
+
+
+  const [open, setOpen] = useState(false);
+  const [index, setIndex] = useState(0);
+
+  // Slides based on featured photos
+  const featuredSlides = featuredPhotos.map((p) => ({
+    src: p.src,
+    width: p.w ?? 1600,
+    height: p.h ?? 1066,
+    alt: p.alt ?? "Photo",
+  }));
+
+  // Parallax hero background
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = window.scrollY * 0.3;
+      const hero = document.getElementById("hero-parallax");
+      if (hero) hero.style.setProperty("--parallax-offset", `${offset}px`);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+   <main className="pt-1 pb-20">
+
+
+      {/* --- CINEMATIC HERO --- */}
+      <div className="relative h-[70vh] w-full overflow-hidden mb-20">
+        {/* Background */}
+        <div
+          id="hero-parallax"
+          className="hero-bg"
+          style={{ backgroundImage: "url('/hero.jpg')" }}
+        />
+
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/80" />
+
+        {/* Foreground Text */}
+        <div className="relative z-10 flex flex-col items-center justify-center h-full text-center">
+          <FadeIn>
+            <h1 className="text-6xl font-bold text-white drop-shadow-xl">
+              Welcome to my portfolio
+            </h1>
+          </FadeIn>
+
+          <FadeIn delay={200}>
+            <p className="text-lg text-zinc-300 mt-6">
+               Bay Area Photographer - City • Concerts • Travel
+            </p>
+          </FadeIn>
+
+          <FadeIn delay={350}>
+            <div className="flex gap-4 mt-8">
+              <a href="/albums" className="pill">Albums</a>
+              <a href="/gallery" className="pill">All Photos</a>
+            </div>
+          </FadeIn>
+
+
+        </div>
+      </div>
+
+      {/* --- FEATURED PHOTOS SECTION --- */}
+      <section className="max-w-[1400px] mx-auto px-4 mt-20 mb-28">
+        <h2 className="text-3xl font-bold mb-6 text-center">Featured Photos</h2>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {featuredPhotos.map((p, i) => (
+            <div
+              key={i}
+              onClick={() => { setIndex(i); setOpen(true); }}
+              className="group relative overflow-hidden rounded-2xl cursor-pointer"
+            >
+              <Image
+                src={p.src}
+                alt={p.alt ?? "Featured photo"}
+                width={p.w ?? 1600}
+                height={p.h ?? 1066}
+                className="object-cover w-full h-72 rounded-2xl border border-[var(--border)]
+               transition duration-300 group-hover:brightness-110 group-hover:scale-105"
+              />
+            </div>
+
+          ))}
+        </div>
+      </section>
+
+      {/* --- ABOUT ME SECTION --- */}
+      <section className="max-w-[900px] mx-auto px-4 mt-10 mb-28 text-center space-y-6">
+        <h2 className="text-3xl font-bold tracking-tight">About Me</h2>
+
+        <p className="text-zinc-300 leading-relaxed text-lg">
+          I'm a Northern California photographer specializing in
+          <span className="font-semibold"> concert, event, and urban photography</span>.
+          I’ve captured countless moments across cities, festivals, and campus events —
+          always focused on emotion, energy, and storytelling through every frame.
+        </p>
+
+        <p className="text-zinc-300 leading-relaxed text-lg">
+          I’m currently open for <span className="font-semibold">bookings, collaborations, and media pass opportunities</span>.
+          If you need coverage for a concert, event, or creative project, feel free to reach out.
+        </p>
+
+        <div className="flex justify-center gap-4 mt-8">
+          <a href="/gallery" className="pill">View My Work</a>
+          <a href="/contact" className="pill">Contact</a>
+        </div>
+      </section>
+
+      {open && (
+        <Lightbox
+          open={open}
+          close={() => setOpen(false)}
+          index={index}
+          slides={featuredSlides}
+          styles={{
+            container: {
+              backgroundColor: "rgba(0,0,0,0.3)",
+              backdropFilter: "blur(2px)",
+            },
+          }}
+        />
+      )}
+
+    </main>
+
+
+  );
+
+
+
+}
+

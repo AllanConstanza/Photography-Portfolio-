@@ -24,3 +24,101 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* --- UI polish additions --- */
+:root {
+  --bg: #0b0b0b;         /* deep charcoal */
+  --panel: #111213;      /* card background */
+  --border: #1f1f1f;     /* hairline borders */
+  --muted: #a1a1aa;      /* neutral label */
+}
+
+body {
+  background: var(--bg);
+  color: #f5f5f5;
+  letter-spacing: 0.3px;
+}
+
+/* reusable bits */
+.card { @apply rounded-2xl border shadow-[0_1px_0_0_rgba(255,255,255,0.02)] transition; border-color: var(--border); background: var(--panel); }
+.card:hover { @apply shadow-lg -translate-y-0.5; }
+
+.badge { @apply inline-flex items-center justify-center rounded-full text-xs w-7 h-7; background: rgba(0,0,0,0.35); backdrop-filter: blur(4px); border: 1px solid rgba(255,255,255,0.12); }
+
+.pill { @apply px-3 py-1.5 rounded-full border text-sm transition; border-color: var(--border); background: var(--panel); color: #e5e5e5; }
+.pill:hover { @apply bg-[#171717]; }
+.pill--active { @apply bg-white text-black border-white; }
+
+.nav-link { @apply text-sm text-zinc-300 hover:text-white hover:underline underline-offset-4; }
+
+.gallery-columns { column-gap: 1.25rem; } /* tighter gaps */
+
+
+/* Cinematic hero background */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(0.5) saturate(1.2);
+  transform: translateY(var(--parallax-offset, 0px));
+  transition: transform 0.15s ease-out;
+}
+
+/* Fade-in animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fadeUp {
+  animation: fadeUp 0.6s ease forwards;
+}
+
+/* Reusable pill buttons */
+.pill {
+  background: white;
+  color: black;
+  padding: 0.55rem 1.6rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255,255,255,0.3);
+  font-weight: 500;
+  transition: 0.25s ease;
+}
+
+.pill:hover {
+  background: #f7f7f7;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(255,255,255,0.15);
+}
+
+
+nav a {
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 1px;
+  width: 0%;
+  background: white;
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+h1, h2, h3 {
+  letter-spacing: -0.5px;
+}
+
