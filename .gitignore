@@ -58,5 +58,3 @@ src/data/albums.json
 # build scripts output
 public/photos-generated/
 
-# screenshots (optional)
-public/screenshots/

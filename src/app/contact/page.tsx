@@ -1,18 +1,47 @@
+import { Mail, Instagram, Linkedin } from "lucide-react";
+
 export default function ContactPage() {
   return (
-    <section className="max-w-[800px] mx-auto px-4 py-20 text-center space-y-6">
-      <h1 className="text-4xl font-bold mb-6">Contact</h1>
+    <section className="max-w-[650px] mx-auto px-6 py-28">
+      <h1 className="text-5xl font-bold text-center mb-6">Contact</h1>
 
-      <p className="text-lg text-zinc-300">
-        I&apos;m currently open for bookings, collaborations, and media pass
-        opportunities. Feel free to reach out anytime.
+      <p className="text-lg text-zinc-300 text-center mb-12">
+        I’m currently open for bookings, collaborations, and media passes.
+        If you need coverage for a special event, let’s connect.
       </p>
 
-      <div className="space-y-3 text-lg">
-        <p>Email: <a href="mailto:YOUR_EMAIL" className="underline">YOUR_EMAIL</a></p>
-        <p>Instagram: <a href="https://instagram.com/YOUR_HANDLE" className="underline">@YOUR_HANDLE</a></p>
-        <p>LinkedIn: <a href="YOUR_LINK" className="underline">View Profile</a></p>
+      <div className="bg-zinc-900/40 backdrop-blur-sm border border-white/10 rounded-2xl p-10 space-y-8">
+
+        {/* Email */}
+        <a
+          href="mailto:allanconstanza2003@gmail.com"
+          className="flex items-center gap-4 text-lg hover:text-white transition"
+        >
+          <Mail size={26} />
+          allanconstanza2003@gmail.com
+        </a>
+
+        {/* Instagram */}
+        <a
+          href="https://instagram.com/_allanconstanza_"
+          target="_blank"
+          className="flex items-center gap-4 text-lg hover:text-white transition"
+        >
+          <Instagram size={26} />
+          @_allanconstanza_
+        </a>
+
+        {/* LinkedIn */}
+        <a
+          href="https://www.linkedin.com/in/allan-constanza/"
+          target="_blank"
+          className="flex items-center gap-4 text-lg hover:text-white transition"
+        >
+          <Linkedin size={26} />
+          View LinkedIn Profile
+        </a>
       </div>
     </section>
   );
 }
+
