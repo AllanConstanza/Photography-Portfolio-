@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState, useEffect } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
@@ -8,13 +9,14 @@ import data from "@/data/albums.json";
 
 export default function HomePage() {
   const photos = data.photos;
-  const featured = photos.filter(p =>
-    ["/photos/travel/01D4380E-167B-4A4E-8D24-32D48E1CE902_1_201_a.jpeg", "/photos/travel/4D1D7A48-6A7E-4D12-B857-7E885F1FE546_1_201_a.jpeg",
-      "/photos/travel/6F7A4182-0136-4927-B3D4-3C70914C41C0_1_105_c.jpeg"
-    ]
-      .includes(p.src)
-  );
 
+  const featured = photos.filter((p) =>
+    [
+      "/photos/travel/01D4380E-167B-4A4E-8D24-32D48E1CE902_1_201_a.jpeg",
+      "/photos/travel/4D1D7A48-6A7E-4D12-B857-7E885F1FE546_1_201_a.jpeg",
+      "/photos/travel/6F7A4182-0136-4927-B3D4-3C70914C41C0_1_105_c.jpeg",
+    ].includes(p.src)
+  );
 
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
@@ -53,22 +55,27 @@ export default function HomePage() {
           <h1 className="text-6xl font-bold text-white drop-shadow-xl">
             Welcome to my portfolio
           </h1>
+
           <p className="text-lg text-zinc-300 mt-6">
-            Bay Area Photographer — City • Concerts • Travel
+            Bay Area Photographer — City • Events • Travel
           </p>
 
           <div className="flex gap-4 mt-8">
-            <a href="/albums" className="pill">Albums</a>
-            <a href="/gallery" className="pill">All Photos</a>
+            <Link href="/albums" className="pill">
+              Albums
+            </Link>
+            <Link href="/gallery" className="pill">
+              All Photos
+            </Link>
           </div>
         </div>
       </div>
 
-      {/* ✅ ABOUT ME — slightly smaller image */}
+      {/* ✅ ABOUT ME */}
       <section className="max-w-[1400px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 mb-32">
         <div className="flex justify-center">
           <Image
-            src="/photos/concerts/IMG_9787.JPG"
+            src="/photos/events/IMG_9787.JPG"
             alt="About me photo"
             width={600}
             height={800}
@@ -80,25 +87,29 @@ export default function HomePage() {
           <h2 className="text-4xl font-bold">About Me</h2>
 
           <p className="text-zinc-300 text-lg leading-relaxed">
-            I'm a Northern California photographer specializing in
+            I&apos;m a Northern California photographer specializing in
             <span className="font-semibold"> special events and urban photography</span>.
-            I’ve captured moments across cities, festivals, and sporting events -
+            I&apos;ve captured moments across cities, festivals, and sporting events -
             focused on emotion, energy, and storytelling.
           </p>
 
           <p className="text-zinc-300 text-lg leading-relaxed">
-            I’m currently open for <span className="font-semibold">bookings and collaborations</span>.
-            If you need coverage for an upcoming event, let’s connect.
+            I&apos;m currently open for <span className="font-semibold">bookings and collaborations</span>.
+            If you need coverage for an upcoming event, let&apos;s connect.
           </p>
 
           <div className="flex gap-4 justify-center md:justify-start pt-4">
-            <a href="/gallery" className="pill">View My Work</a>
-            <a href="/contact" className="pill">Contact</a>
+            <Link href="/gallery" className="pill">
+              View My Work
+            </Link>
+            <Link href="/contact" className="pill">
+              Contact
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* ✅ FEATURED — exact same visual size */}
+      {/* ✅ FEATURED — same filtering + same hover */}
       <section className="max-w-[1400px] mx-auto px-6">
         <h2 className="text-3xl font-bold text-center mb-10">Featured Photos</h2>
 
@@ -106,7 +117,10 @@ export default function HomePage() {
           {featured.map((p, i) => (
             <button
               key={i}
-              onClick={() => { setIndex(i); setOpen(true); }}
+              onClick={() => {
+                setIndex(i);
+                setOpen(true);
+              }}
               className="group block w-full"
             >
               <div className="relative w-full h-[420px] rounded-2xl overflow-hidden border border-white/10 bg-black group hover:shadow-[0_0_35px_#ffffff15]">
@@ -115,10 +129,8 @@ export default function HomePage() {
                   alt={p.alt ?? "Featured photo"}
                   fill
                   className="object-cover transition duration-500 ease-in-out group-hover:scale-[1.06]"
-                
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
-
               </div>
             </button>
           ))}
