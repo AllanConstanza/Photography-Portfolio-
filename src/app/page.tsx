@@ -1,15 +1,27 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, ReactNode, useState } from "react";
 import data from "@/data/albums.json";
 import Image from "next/image";
-import { useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
+import Link from "next/link";
 import "yet-another-react-lightbox/styles.css";
 
+type Photo = {
+  src: string;
+  alt?: string;
+  album: string;
+  w?: number;
+  h?: number;
+};
+
+type FadeInProps = {
+  children: ReactNode;
+  delay?: number;
+};
 
 // Fade-in animation component
-function FadeIn({ children, delay = 0 }: any) {
+function FadeIn({ children, delay = 0 }: FadeInProps) {
   return (
     <div
       style={{ animationDelay: `${delay}ms` }}
@@ -21,21 +33,13 @@ function FadeIn({ children, delay = 0 }: any) {
 }
 
 export default function HomePage() {
-  const photos: any[] = data.photos;
+  const photos = data.photos as Photo[];
 
-  // Pick 4–6 featured photos (update with your favorites)
-  const featuredPhotos = [
-    photos[0],
-    photos[1],
-    photos[2],
-    photos[3],
-  ];
-
+  const featuredPhotos = photos.slice(0, 4);
 
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
 
-  // Slides based on featured photos
   const featuredSlides = featuredPhotos.map((p) => ({
     src: p.src,
     width: p.w ?? 1600,
@@ -55,22 +59,16 @@ export default function HomePage() {
   }, []);
 
   return (
-   <main className="pt-1 pb-20">
-
-
+    <main className="pt-1 pb-20">
       {/* --- CINEMATIC HERO --- */}
       <div className="relative h-[70vh] w-full overflow-hidden mb-20">
-        {/* Background */}
         <div
           id="hero-parallax"
           className="hero-bg"
           style={{ backgroundImage: "url('/hero.jpg')" }}
         />
-
-        {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/80" />
 
-        {/* Foreground Text */}
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center">
           <FadeIn>
             <h1 className="text-6xl font-bold text-white drop-shadow-xl">
@@ -80,22 +78,24 @@ export default function HomePage() {
 
           <FadeIn delay={200}>
             <p className="text-lg text-zinc-300 mt-6">
-               Bay Area Photographer - City • Concerts • Travel
+              Bay Area Photographer — City • Concerts • Travel
             </p>
           </FadeIn>
 
           <FadeIn delay={350}>
             <div className="flex gap-4 mt-8">
-              <a href="/albums" className="pill">Albums</a>
-              <a href="/gallery" className="pill">All Photos</a>
+              <Link href="/albums" className="pill">
+                Albums
+              </Link>
+              <Link href="/gallery" className="pill">
+                All Photos
+              </Link>
             </div>
           </FadeIn>
-
-
         </div>
       </div>
 
-      {/* --- FEATURED PHOTOS SECTION --- */}
+      {/* --- FEATURED PHOTOS --- */}
       <section className="max-w-[1400px] mx-auto px-4 mt-20 mb-28">
         <h2 className="text-3xl font-bold mb-6 text-center">Featured Photos</h2>
 
@@ -103,7 +103,10 @@ export default function HomePage() {
           {featuredPhotos.map((p, i) => (
             <div
               key={i}
-              onClick={() => { setIndex(i); setOpen(true); }}
+              onClick={() => {
+                setIndex(i);
+                setOpen(true);
+              }}
               className="group relative overflow-hidden rounded-2xl cursor-pointer"
             >
               <Image
@@ -115,30 +118,7 @@ export default function HomePage() {
                transition duration-300 group-hover:brightness-110 group-hover:scale-105"
               />
             </div>
-
           ))}
-        </div>
-      </section>
-
-      {/* --- ABOUT ME SECTION --- */}
-      <section className="max-w-[900px] mx-auto px-4 mt-10 mb-28 text-center space-y-6">
-        <h2 className="text-3xl font-bold tracking-tight">About Me</h2>
-
-        <p className="text-zinc-300 leading-relaxed text-lg">
-          I'm a Northern California photographer specializing in
-          <span className="font-semibold"> concert, event, and urban photography</span>.
-          I’ve captured countless moments across cities, festivals, and campus events —
-          always focused on emotion, energy, and storytelling through every frame.
-        </p>
-
-        <p className="text-zinc-300 leading-relaxed text-lg">
-          I’m currently open for <span className="font-semibold">bookings, collaborations, and media pass opportunities</span>.
-          If you need coverage for a concert, event, or creative project, feel free to reach out.
-        </p>
-
-        <div className="flex justify-center gap-4 mt-8">
-          <a href="/gallery" className="pill">View My Work</a>
-          <a href="/contact" className="pill">Contact</a>
         </div>
       </section>
 
@@ -156,13 +136,7 @@ export default function HomePage() {
           }}
         />
       )}
-
     </main>
-
-
   );
-
-
-
 }
 

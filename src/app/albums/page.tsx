@@ -1,32 +1,34 @@
-import Image from "next/image";
-import data from "@/data/albums.json";
+/* eslint-disable @next/next/no-img-element */
 
-type Album = { name: string; cover: string; count: number };
-const albums = (data as any).albums as Album[];
+
+import Link from "next/link";
+import data from "@/data/albums.json";
+import type { Album } from "@/types/photos";
 
 export default function AlbumsPage() {
+  const albums = data.albums as Album[];
+
   return (
-    <section className="py-4">
-      <h1 className="text-3xl font-semibold mb-6">Albums</h1>
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <section className="py-10 max-w-[1400px] mx-auto px-4">
+      <h1 className="text-4xl font-bold mb-10">Albums</h1>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {albums.map((a) => (
-          <a key={a.name} href={`/albums/${a.name}`} className="group relative overflow-hidden card">
-            <div className="relative w-full h-64">
-              <Image
+          <Link
+            key={a.name}
+            href={`/albums/${a.name}`}
+            className="block group"
+          >
+            <div className="overflow-hidden rounded-2xl">
+              <img
                 src={a.cover}
                 alt={a.name}
-                fill
-                className="object-cover transition duration-500 group-hover:scale-105"
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                priority={false}
+                className="w-full h-64 object-cover rounded-2xl transition group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-              <div className="absolute bottom-0 p-4 text-white flex items-center justify-between w-full">
-                <div className="font-medium capitalize">{a.name}</div>
-                <div className="text-sm opacity-80">{a.count}</div>
-              </div>
             </div>
-          </a>
+            <h2 className="mt-4 text-xl font-semibold capitalize">{a.name}</h2>
+            <p className="text-sm text-zinc-400">{a.count} photos</p>
+          </Link>
         ))}
       </div>
     </section>
