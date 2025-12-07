@@ -1,7 +1,7 @@
 # 📸 Allan Constanza — Photography Portfolio
 
 A modern, responsive photography website built with **Next.js**, **TypeScript**, and **Tailwind CSS**.  
-Features dynamic albums, lightbox viewing, and a cinematic landing page.
+Features dynamic albums, lightbox viewing, and a cinematic landing page. I've included pictures from my recent travels and concerts that I have attended. 
 
 ---
 
@@ -11,7 +11,7 @@ Features dynamic albums, lightbox viewing, and a cinematic landing page.
 https://photography-portfolio-4zia.vercel.app/
 ---
 
-## 🖼️ Screenshots
+## Screenshots
 
 ### Home Page
 ![Home Screenshot](public/screenshots/home.png)
@@ -21,19 +21,17 @@ https://photography-portfolio-4zia.vercel.app/
 
 ---
 
-## 🚀 Tech Stack
+## Tech Stack
 
 - Next.js 15 
 - TypeScript
 - Tailwind CSS
 - Lightbox viewer
 - Vercel hosting
-- Responsive image optimization
 
 ---
 
-## 📬 Contact
+## Contact
 
 📸 Instagram: https://instagram.com/YOUR_HANDLE  
-📧 Email: YOUR_EMAIL  
 💼 LinkedIn: https://linkedin.com/in/YOUR_PROFILE
