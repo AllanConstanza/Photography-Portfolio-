@@ -1,0 +1,252 @@
+{
+  "albums": [
+    {
+      "name": "concerts",
+      "cover": "/photos/concerts/IMG_8831 2.jpg",
+      "count": 12
+    },
+    {
+      "name": "sports",
+      "cover": "/photos/sports/00doval.JPG",
+      "count": 6
+    },
+    {
+      "name": "moments",
+      "cover": "/photos/moments/00croc.jpeg",
+      "count": 15
+    }
+  ],
+  "photos": [
+    {
+      "src": "/photos/concerts/IMG_8831 2.jpg",
+      "alt": "concerts — IMG_8831 2.jpg",
+      "album": "concerts",
+      "w": 1600,
+      "h": 1066
+    },
+    {
+      "src": "/photos/concerts/IMG_8865 2.jpg",
+      "alt": "concerts — IMG_8865 2.jpg",
+      "album": "concerts",
+      "w": 1600,
+      "h": 1066
+    },
+    {
+      "src": "/photos/concerts/IMG_8949 2.jpg",
+      "alt": "concerts — IMG_8949 2.jpg",
+      "album": "concerts",
+      "w": 1600,
+      "h": 1066
+    },
+    {
+      "src": "/photos/concerts/IMG_8956 2.jpg",
+      "alt": "concerts — IMG_8956 2.jpg",
+      "album": "concerts",
+      "w": 1600,
+      "h": 1066
+    },
+    {
+      "src": "/photos/concerts/IMG_8975 2.jpg",
+      "alt": "concerts — IMG_8975 2.jpg",
+      "album": "concerts",
+      "w": 1600,
+      "h": 1066
+    },
+    {
+      "src": "/photos/concerts/IMG_8977 2.jpg",
+      "alt": "concerts — IMG_8977 2.jpg",
+      "album": "concerts",
+      "w": 1600,
+      "h": 1066
+    },
+    {
+      "src": "/photos/concerts/IMG_8986 2.jpg",
+      "alt": "concerts — IMG_8986 2.jpg",
+      "album": "concerts",
+      "w": 1600,
+      "h": 1066
+    },
+    {
+      "src": "/photos/concerts/IMG_8995 2.jpg",
+      "alt": "concerts — IMG_8995 2.jpg",
+      "album": "concerts",
+      "w": 1600,
+      "h": 1066
+    },
+    {
+      "src": "/photos/concerts/IMG_9435.jpg",
+      "alt": "concerts — IMG_9435.jpg",
+      "album": "concerts",
+      "w": 1600,
+      "h": 1066
+    },
+    {
+      "src": "/photos/concerts/IMG_9754.JPG",
+      "alt": "concerts — IMG_9754.JPG",
+      "album": "concerts",
+      "w": 1600,
+      "h": 1066
+    },
+    {
+      "src": "/photos/concerts/IMG_9780.JPG",
+      "alt": "concerts — IMG_9780.JPG",
+      "album": "concerts",
+      "w": 1600,
+      "h": 1066
+    },
+    {
+      "src": "/photos/concerts/IMG_9787.JPG",
+      "alt": "concerts — IMG_9787.JPG",
+      "album": "concerts",
+      "w": 1600,
+      "h": 1066
+    },
+    {
+      "src": "/photos/sports/00doval.JPG",
+      "alt": "sports — 00doval.JPG",
+      "album": "sports",
+      "w": 1600,
+      "h": 1066
+    },
+    {
+      "src": "/photos/sports/Bleachers.JPG",
+      "alt": "sports — Bleachers.JPG",
+      "album": "sports",
+      "w": 1600,
+      "h": 1066
+    },
+    {
+      "src": "/photos/sports/Celebrate.JPG",
+      "alt": "sports — Celebrate.JPG",
+      "album": "sports",
+      "w": 1600,
+      "h": 1066
+    },
+    {
+      "src": "/photos/sports/DSC_1111.JPG",
+      "alt": "sports — DSC_1111.JPG",
+      "album": "sports",
+      "w": 1600,
+      "h": 1066
+    },
+    {
+      "src": "/photos/sports/IMG_8125.JPG",
+      "alt": "sports — IMG_8125.JPG",
+      "album": "sports",
+      "w": 1600,
+      "h": 1066
+    },
+    {
+      "src": "/photos/sports/IMG_8403.JPG",
+      "alt": "sports — IMG_8403.JPG",
+      "album": "sports",
+      "w": 1600,
+      "h": 1066
+    },
+    {
+      "src": "/photos/moments/00croc.jpeg",
+      "alt": "moments — 00croc.jpeg",
+      "album": "moments",
+      "w": 1600,
+      "h": 1066
+    },
+    {
+      "src": "/photos/moments/01D4380E-167B-4A4E-8D24-32D48E1CE902_1_201_a.jpeg",
+      "alt": "moments — 01D4380E-167B-4A4E-8D24-32D48E1CE902_1_201_a.jpeg",
+      "album": "moments",
+      "w": 1600,
+      "h": 1066
+    },
+    {
+      "src": "/photos/moments/6F7A4182-0136-4927-B3D4-3C70914C41C0_1_105_c.jpeg",
+      "alt": "moments — 6F7A4182-0136-4927-B3D4-3C70914C41C0_1_105_c.jpeg",
+      "album": "moments",
+      "w": 1600,
+      "h": 1066
+    },
+    {
+      "src": "/photos/moments/A02F9F6B-B92A-4509-9B0A-EFBC4632EE8A_1_105_c.jpeg",
+      "alt": "moments — A02F9F6B-B92A-4509-9B0A-EFBC4632EE8A_1_105_c.jpeg",
+      "album": "moments",
+      "w": 1600,
+      "h": 1066
+    },
+    {
+      "src": "/photos/moments/DSC_0387.JPG",
+      "alt": "moments — DSC_0387.JPG",
+      "album": "moments",
+      "w": 1600,
+      "h": 1066
+    },
+    {
+      "src": "/photos/moments/DSC_0566.jpeg",
+      "alt": "moments — DSC_0566.jpeg",
+      "album": "moments",
+      "w": 1600,
+      "h": 1066
+    },
+    {
+      "src": "/photos/moments/DSC_0653.jpg",
+      "alt": "moments — DSC_0653.jpg",
+      "album": "moments",
+      "w": 1600,
+      "h": 1066
+    },
+    {
+      "src": "/photos/moments/DSC_0693.jpeg",
+      "alt": "moments — DSC_0693.jpeg",
+      "album": "moments",
+      "w": 1600,
+      "h": 1066
+    },
+    {
+      "src": "/photos/moments/DSC_0778.jpeg",
+      "alt": "moments — DSC_0778.jpeg",
+      "album": "moments",
+      "w": 1600,
+      "h": 1066
+    },
+    {
+      "src": "/photos/moments/DSC_0803-Enhanced-NR.jpg",
+      "alt": "moments — DSC_0803-Enhanced-NR.jpg",
+      "album": "moments",
+      "w": 1600,
+      "h": 1066
+    },
+    {
+      "src": "/photos/moments/DSC_0949.jpg",
+      "alt": "moments — DSC_0949.jpg",
+      "album": "moments",
+      "w": 1600,
+      "h": 1066
+    },
+    {
+      "src": "/photos/moments/Hard RockStadium.jpg",
+      "alt": "moments — Hard RockStadium.jpg",
+      "album": "moments",
+      "w": 1600,
+      "h": 1066
+    },
+    {
+      "src": "/photos/moments/IMG_0332.jpeg",
+      "alt": "moments — IMG_0332.jpeg",
+      "album": "moments",
+      "w": 1600,
+      "h": 1066
+    },
+    {
+      "src": "/photos/moments/IMG_0429.jpeg",
+      "alt": "moments — IMG_0429.jpeg",
+      "album": "moments",
+      "w": 1600,
+      "h": 1066
+    },
+    {
+      "src": "/photos/moments/IMG_1927.jpeg",
+      "alt": "moments — IMG_1927.jpeg",
+      "album": "moments",
+      "w": 1600,
+      "h": 1066
+    }
+  ]
+}

@@ -59,3 +59,6 @@ src/data/albums.json
 public/photos-generated/
 
 public/photos/
+
+# Allow albums.json (override ignore rules)
+!src/data/albums.json
