@@ -29,9 +29,3 @@ https://photography-portfolio-4zia.vercel.app/
 - Lightbox viewer
 - Vercel hosting
 
----
-
-## Contact
-
-📸 Instagram: https://instagram.com/YOUR_HANDLE  
-💼 LinkedIn: https://linkedin.com/in/YOUR_PROFILE
