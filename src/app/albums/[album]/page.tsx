@@ -9,7 +9,6 @@ import "yet-another-react-lightbox/styles.css";
 import type { Photo } from "@/types/photos";
 
 export default function AlbumPage() {
-  // ✅ correct way to read dynamic route params in a client component
   const params = useParams();
   const album = params.album as string;
 
@@ -41,17 +40,14 @@ export default function AlbumPage() {
 
   return (
     <section className="py-10 max-w-[1400px] mx-auto px-4">
-      <h1 className="text-3xl font-semibold mb-6 capitalize">{album}</h1>
+      <h1 className="text-4xl font-bold mb-8 capitalize">{album}</h1>
 
       <div className="columns-2 sm:columns-3 lg:columns-4 gap-4 [column-fill:_balance]">
         {list.map((p, i) => (
           <figure key={i} className="mb-4 break-inside-avoid">
             <button
               type="button"
-              onClick={() => {
-                setIndex(i);
-                setOpen(true);
-              }}
+              onClick={() => { setIndex(i); setOpen(true); }}
               className="group relative block w-full focus:outline-none"
             >
               <Image
@@ -59,7 +55,7 @@ export default function AlbumPage() {
                 alt={p.alt ?? `${album} photo`}
                 width={p.w ?? 1600}
                 height={p.h ?? 1066}
-                className="w-full h-auto rounded-2xl shadow-sm transition group-hover:shadow-lg"
+                className="w-full h-auto rounded-2xl shadow-sm transition duration-300 group-hover:scale-[1.02] group-hover:brightness-110"
               />
             </button>
           </figure>

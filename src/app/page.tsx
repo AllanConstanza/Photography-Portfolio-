@@ -12,9 +12,9 @@ export default function HomePage() {
 
   const featured = photos.filter((p) =>
     [
-      "/photos/travel/01D4380E-167B-4A4E-8D24-32D48E1CE902_1_201_a.jpeg",
-      "/photos/travel/4D1D7A48-6A7E-4D12-B857-7E885F1FE546_1_201_a.jpeg",
-      "/photos/travel/6F7A4182-0136-4927-B3D4-3C70914C41C0_1_105_c.jpeg",
+      "/photos/concerts/IMG_8986 2.jpg",
+      "/photos/concerts/IMG_8977 2.jpg",
+      "/photos/concerts/IMG_9787.JPG",
     ].includes(p.src)
   );
 
@@ -41,8 +41,8 @@ export default function HomePage() {
   return (
     <main className="pb-32">
 
-      {/* ✅ HERO */}
-      <div className="relative h-[70vh] w-full overflow-hidden mb-24">
+      {/* HERO */}
+      <div className="relative h-[65vh] w-full overflow-hidden mb-20">
         <div
           id="hero-parallax"
           className="hero-bg"
@@ -51,13 +51,13 @@ export default function HomePage() {
 
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/90" />
 
-        <div className="relative z-10 flex flex-col items-center justify-center h-full text-center">
-          <h1 className="text-6xl font-bold text-white drop-shadow-xl">
+        <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
+          <h1 className="text-4xl sm:text-6xl font-bold text-white drop-shadow-xl">
             Welcome to my portfolio
           </h1>
 
-          <p className="text-lg text-zinc-300 mt-6">
-            Bay Area Photographer — City • Events • Travel
+          <p className="text-base sm:text-lg text-zinc-300 mt-4">
+            Bay Area Photographer — Concerts • Sports • Moments
           </p>
 
           <div className="flex gap-4 mt-8">
@@ -71,30 +71,31 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* ✅ ABOUT ME */}
-      <section className="max-w-[1400px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 mb-32">
+      {/* ABOUT ME */}
+      <section className="max-w-[1400px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 mb-24">
         <div className="flex justify-center">
           <Image
-            src="/photos/events/IMG_9787.JPG"
+            src="/photos/sports/00doval.JPG"
             alt="About me photo"
             width={600}
             height={800}
-            className="rounded-2xl border border-white/10 w-auto h-auto max-w-[75%]"
+            className="rounded-2xl border border-white/10 w-full max-w-[350px] h-auto"
           />
         </div>
 
         <div className="flex flex-col justify-center space-y-6 text-center md:text-left">
-          <h2 className="text-4xl font-bold">About Me</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold">About Me</h2>
 
-          <p className="text-zinc-300 text-lg leading-relaxed">
+          <p className="text-zinc-300 text-base sm:text-lg leading-relaxed">
             I&apos;m a Northern California photographer specializing in
             <span className="font-semibold"> special events and urban photography</span>.
-            I&apos;ve captured moments across cities, festivals, and sporting events -
+            I&apos;ve captured moments across cities, festivals, and sporting events —
             focused on emotion, energy, and storytelling.
           </p>
 
-          <p className="text-zinc-300 text-lg leading-relaxed">
-            I&apos;m currently open for <span className="font-semibold">bookings and collaborations</span>.
+          <p className="text-zinc-300 text-base sm:text-lg leading-relaxed">
+            I&apos;m currently open for{" "}
+            <span className="font-semibold">bookings and collaborations</span>.
             If you need coverage for an upcoming event, let&apos;s connect.
           </p>
 
@@ -109,11 +110,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ✅ FEATURED — same filtering + same hover */}
+      {/* FEATURED */}
       <section className="max-w-[1400px] mx-auto px-6">
         <h2 className="text-3xl font-bold text-center mb-10">Featured Photos</h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {featured.map((p, i) => (
             <button
               key={i}
@@ -123,13 +124,13 @@ export default function HomePage() {
               }}
               className="group block w-full"
             >
-              <div className="relative w-full h-[420px] rounded-2xl overflow-hidden border border-white/10 bg-black group hover:shadow-[0_0_35px_#ffffff15]">
+              <div className="w-full rounded-2xl overflow-hidden border border-white/10 bg-black">
                 <Image
                   src={p.src}
                   alt={p.alt ?? "Featured photo"}
-                  fill
-                  className="object-cover transition duration-500 ease-in-out group-hover:scale-[1.06]"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  width={p.w}
+                  height={p.h}
+                  className="w-full h-auto rounded-2xl transition duration-500 ease-in-out group-hover:brightness-110 group-hover:scale-[1.02]"
                 />
               </div>
             </button>
