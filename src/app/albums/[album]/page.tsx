@@ -25,7 +25,7 @@ export default function AlbumPage() {
   if (!list.length) {
     return (
       <section className="py-10 max-w-[1400px] mx-auto px-4">
-        <h1 className="text-3xl font-semibold mb-4 capitalize">{album}</h1>
+        <h1 className="text-3xl font-semibold mb-4 capitalize text-center">{album}</h1>
         <p className="text-zinc-400">No photos found.</p>
       </section>
     );
@@ -40,7 +40,7 @@ export default function AlbumPage() {
 
   return (
     <section className="py-10 max-w-[1400px] mx-auto px-4">
-      <h1 className="text-4xl font-bold mb-8 capitalize">{album}</h1>
+      <h1 className="text-4xl font-bold mb-8 capitalize text-center">{album}</h1>
 
       <div className="columns-2 sm:columns-3 lg:columns-4 gap-4 [column-fill:_balance]">
         {list.map((p, i) => (

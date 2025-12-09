@@ -34,7 +34,7 @@ export default function GalleryPage() {
       {/* HEADER + FILTERS */}
       <div className="max-w-[1400px] mx-auto px-4 mb-10">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
-          <h1 className="text-3xl font-bold">All Photos</h1>
+          <h1 className="text-3xl font-semibold text-center w-full">All Photos</h1>
 
           <div className="flex flex-wrap gap-2">
             {["All", ...albums].map((a) => (
