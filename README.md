@@ -8,8 +8,7 @@ Features dynamic albums, lightbox viewing, and a cinematic landing page. I've in
 ## Live Site
 
 **View the portfolio here:**  
-https://visualsbyallan.com/---
-
+https://visualsbyallan.com/
 ## Screenshots
 
 ### Home Page
