@@ -14,8 +14,8 @@ https://visualsbyallan.com/
 ### Home Page & Gallery
 
 <p align="center">
-  <img src="/screenshots/home.png" width="45%" />
-  <img src="/screenshots/gallery.png" width="45%" />
+  <img src="public/screenshots/home.png" width="45%" />
+  <img src="public/screenshots/gallery.png" width="45%" />
 </p>
 
 
