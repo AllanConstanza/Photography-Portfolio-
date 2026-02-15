@@ -1,7 +1,7 @@
 # Photography Portfolio
 
 A modern, responsive photography website built with **Next.js**, **TypeScript**, and **Tailwind CSS**.  
-Features dynamic albums, lightbox viewing, and a cinematic landing page. I've included pictures from my recent travels and concerts that I have attended. 
+Features dynamic albums, lightbox viewing, and a cinematic landing page. I've included pictures from my recent travels and concerts that I have attended. The site also includes a booking request form that sends submissions through Formspree, allowing visitors to contact me for collaborations
 
 ---
 
@@ -27,6 +27,7 @@ https://visualsbyallan.com/
 - Next.js 
 - TypeScript
 - Tailwind CSS
+- Formspree (contact form handling)
 - Lightbox viewer
 - Vercel hosting
 
