@@ -24,7 +24,7 @@ https://visualsbyallan.com/
 
 ## Tech Stack
 
-- Next.js 15 
+- Next.js 
 - TypeScript
 - Tailwind CSS
 - Lightbox viewer
