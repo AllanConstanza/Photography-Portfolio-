@@ -11,15 +11,11 @@ Features dynamic albums, lightbox viewing, and a cinematic landing page. I've in
 https://visualsbyallan.com/
 ## Screenshots
 
-### Home Page
-![Home Screenshot](public/screenshots/home.png)
-
-### Gallery
-![Gallery Screenshot](public/screenshots/gallery.png)
+### Home Page & Gallery
 
 <p align="center">
-  <img src="public/screenshots/home.png" width="45%" />
-  <img src="public/screenshots/home.png" width="45%" />
+  <img src="/screenshots/home.png" width="45%" />
+  <img src="/screenshots/gallery.png" width="45%" />
 </p>
 
 
