@@ -17,6 +17,12 @@ https://visualsbyallan.com/
 ### Gallery
 ![Gallery Screenshot](public/screenshots/gallery.png)
 
+<p align="center">
+  <img src="/screenshots/home.png" width="45%" />
+  <img src="/screenshots/gallery.png" width="45%" />
+</p>
+
+
 ---
 
 ## Tech Stack
